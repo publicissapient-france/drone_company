@@ -1,4 +1,0 @@
-bindings:
-- members:
-  - allUsers
-  role: roles/pubsub.publisher
