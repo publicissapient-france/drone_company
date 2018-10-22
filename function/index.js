@@ -11,13 +11,16 @@ exports.onDroneEventHttp = async (req, res) => {
   const droneEvent = req.body;
   let command = null;
   
-  command = {
+  if (droneEvent && droneEvent.event === 'INIT') {
+    
+      command = {
       teamId: droneEvent.teamId,
       command: {
         name: 'READY',
         topicUrl : droneEvent.topicUrl,
       }
     };
+  }
   
   if (command !== null) {
   	await publishInTopic(JSON.stringify(command), 'projects/jbc-atl-sal-func-techevent/topics/drone-command');
