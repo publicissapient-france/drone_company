@@ -7,6 +7,9 @@ const pubsub = new PubSub();
 exports.onDroneEventHttp = async (req, res) => {
   
   console.log(`receiving: ${JSON.stringify(req.body)}`);
+
+  const droneEvent = req.body;
+  let command = null;
   
   if (droneEvent && droneEvent.event === 'INIT') {
   	
@@ -19,7 +22,7 @@ exports.onDroneEventHttp = async (req, res) => {
 	  };
   }
   
-  if (command != null) {
+  if (command !== null) {
   	await publishInTopic(JSON.stringify(command), 'projects/jbc-atl-sal-func-techevent/topics/drone-command');
   }
   
