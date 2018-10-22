@@ -1,7 +1,7 @@
 # How to send a MOVE command to your drone
 
 
-Send the following command in the topic :
+## Send the following command in the topic :
 
 ```
 {
@@ -15,3 +15,10 @@ Send the following command in the topic :
 	}
 }
 ```
+
+# How to optimise your drone
+
+## Turfjs "Advanced geospatial analysis for browsers and Node.js"
+
+[Calculates the distance between two points](http://turfjs.org/docs#distance)
+
