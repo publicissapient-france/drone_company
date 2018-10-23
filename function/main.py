@@ -2,6 +2,8 @@
 from google.cloud import pubsub_v1
 import json
 
+teamId="red-111"
+
 def onDroneEventHttp(request):
 	droneEvent =request.get_json()
 	print ("receiving:{}".format(droneEvent))
@@ -9,12 +11,15 @@ def onDroneEventHttp(request):
 
 	if (droneEvent and droneEvent['event'] == 'INIT'):
 		command["teamId"] = droneEvent['teamId']
-		command ["command"] = { 'name': 'READY', 'topicUrl' :"bleu"} 
+		command ["command"] = { 'name': 'READY', 'topicUrl' : droneEvent['topicUrl'] } 
 
 	if  command :
 		publish_messages(json.dumps(command))
 	
 	return "Ok"
+
+
+
 
 def publish_messages(message):
 	publisher = pubsub_v1.PublisherClient()
