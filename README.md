@@ -18,23 +18,7 @@
 
 # Event received by your Cloud Function
 
-In the **availableParcelsForTeam** attribut you will get all the parcels that your drone can get.
-
-**event** attribut is the type of event currently received.
-**event** value can be :
-- WAITING_FOR_COMMAND (the drone is waiting)
-- MOVING
-- DESTINATION_REACHED	
-- PARCEL_GRABBED
-- PARCEL_DELIVERED
-- MOVE_LOCATION_ERROR (if the location you sent in command is outside the play ground)
-
-At each tick (a tick = 1 second) you will receive an event.
-
-So for example if your drone is currently flying to a point you will receive at each tick an event "MOVING"
-
-
-## Example:
+## Example of json that your cloud function will receive:
 
 ```
 {
@@ -81,6 +65,40 @@ So for example if your drone is currently flying to a point you will receive at 
   ]
 }
 ```
+
+*Note: you will receive events only from your drone*
+
+**event** attribut is the type of event currently received.
+**event** value can be :
+- WAITING_FOR_COMMAND (the drone is waiting)
+- MOVING
+- DESTINATION_REACHED	
+- PARCEL_GRABBED
+- PARCEL_DELIVERED
+- MOVE_LOCATION_ERROR (if the location you sent in command is outside the play ground)
+
+At each tick (a tick = 1 second) you will receive an event.
+
+**droneInfo.parcels** attribut contains parcels that you have already grabbed and that you should deliver.
+
+
+So for example if your drone is currently flying to a point you will receive at each tick an event "MOVING"
+
+In the **availableParcelsForTeam** attribut you will get all the parcels that your drone can get.
+There is currently two type parcel:
+
+**"type": "CLASSIC"**
+Typical parcel when the drone grab one of those he will have to go to the destination to earn the point.
+
+**"type": "SPEED_BOOST"**
+This one is special it will allow your drone to go faster !
+For this one you don't need to deliver it.
+
+
+
+
+# If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
+
 
 # How to optimise your drone
 
