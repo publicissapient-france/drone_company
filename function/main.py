@@ -19,7 +19,7 @@ def onDroneEventHttp(request):
 def publish_messages(message):
 	publisher = pubsub_v1.PublisherClient()
 
-	topic_path = publisher.topic_path('jbc-atl-sal-func-techevent','projects/jbc-atl-sal-func-techevent/topics/drone-command')
+	topic_path = publisher.topic_path("jbc-atl-sal-func-techevent","drone-command")
 
 	data = message.encode('utf-8')
 
