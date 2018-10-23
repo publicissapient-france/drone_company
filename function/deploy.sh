@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-
-gcloud beta functions deploy onDroneEventHttp --runtime=nodejs8 --trigger-http --region=europe-west1
+pip install -r requirements.txt
+gcloud beta functions deploy onDroneEventHttp --runtime python37 --trigger-http --region=europe-west1
