@@ -3,7 +3,7 @@ from google.cloud import pubsub_v1
 import json
 
 def onDroneEventHttp(request):
-	droneEvent =json.loads(request)
+	droneEvent =request.get_json()
 	print ("receiving:{}".format(droneEvent))
 	command = {}
 
