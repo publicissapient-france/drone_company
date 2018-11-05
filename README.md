@@ -1,5 +1,12 @@
-# How to send a MOVE command to your drone
+# How to send your team callback url to the game engine
 
+Run the following example command with your own values:
+
+```
+curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -H "Content-Type: application/json" -X POST https://europe-west1-jbc-atl-sal-func-techevent.cloudfunctions.net/droneCallBackSetter
+```
+
+# How to send a MOVE command to your drone
 
 ## Send the following command in the topic :
 
