@@ -37,10 +37,10 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
       "longitude": 2.3426746801338623
     },
     "topicUrl": "https://europe-west1-...",
-    "parcels": [],
+    "parcels": [], <-- list of parcels caring by your drone 
     "score": 0
   },
-  "availableParcelsForTeam": [
+  "availableParcelsForTeam": [ <-- list of parcels to pickup
     {
       "teamId": "black-543",
       "status": "AVAILABLE",
@@ -66,7 +66,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
           "longitude": 2.2657060097635626
         }
       },
-      "type": "SPEED_BOOST",
+      "type": "SPEED_BOOST" <-- pay attention this parcel is available for every team. So check if it'is still vacant
       "score": 0.1
     }    
   ]
@@ -77,7 +77,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
 
 **event** attribut is the type of event currently received.
 **event** value can be :
-- WAITING_FOR_COMMAND (the drone is waiting)
+- WAITING_FOR_COMMAND (the drone is waiting for a new command even if its operating)
 - MOVING
 - DESTINATION_REACHED	
 - PARCEL_GRABBED
