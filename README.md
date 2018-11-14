@@ -66,7 +66,7 @@ Example of json that your cloud function will receive:
           "longitude": 2.2657060097635626
         }
       },
-      "type": "SPEED_BOOST" <-- Pay attention this parcel is available for every team. So check if it'is still vacant
+      "type": "SPEED_BOOST" <-- Pay attention this parcel is available for every teams. So check if it'is still vacant
       "score": 0.1
     }    
   ]
