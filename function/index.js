@@ -18,12 +18,6 @@ exports.onDroneEventHttp = async (req, res) => {
 
   if (droneEvent.event === 'WAITING_FOR_COMMAND') {
     command = onWaitingForCommandEvent(droneEvent);
-  } else if (droneEvent.event === 'PARCEL_DELIVERED') {
-    command = onParcelDeliveredEvent(droneEvent);
-  } else if (droneEvent.event === 'PARCEL_GRABBED') {
-    command = onParcelGrabbedEvent(droneEvent);
-  } else if (droneEvent.event === 'DESTINATION_REACHED') {
-    command = onDestinationReachedEvent(droneEvent);
   } else if (droneEvent.event === 'MOVING') {
     command = onMovingEvent(droneEvent);
   }
@@ -58,22 +52,6 @@ function onWaitingForCommandEvent(droneEvent) {
   // write your code here
 
   return command;
-}
-
-
-function onParcelDeliveredEvent(droneEvent) {
-  // write your code here
-  return null;
-}
-
-function onParcelGrabbedEvent(droneEvent) {
-  // write your code here
-  return null;
-}
-
-function onDestinationReachedEvent(droneEvent) {
-  // write your code here
-  return null;
 }
 
 function onMovingEvent(droneEvent) {
