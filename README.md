@@ -1,4 +1,4 @@
-# How to send your team callback url to the game engine
+# Register you to the game
 
 Run the following example command with your own values:
 
@@ -6,9 +6,9 @@ Run the following example command with your own values:
 curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -H "Content-Type: application/json" -X POST https://europe-west1-jbc-atl-sal-func-techevent.cloudfunctions.net/droneCallBackSetter
 ```
 
-# How to send a MOVE command to your drone
+# Move your drone
 
-## Command to send for moving drone :
+## type of command to send for moving your drone :
 
 ```
 {
@@ -23,7 +23,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
 }
 ```
 
-# Event received by your Cloud Function
+# Event received 
 
 ## Example of json that your cloud function will receive:
 
@@ -75,7 +75,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
 
 *Note: you will receive events only from your drone*
 
-## All Events 
+# All Events 
 Because of at each tick is 1 second, your function could missed these events. 
 So you should analyse first the situation and then acting one event.
 
@@ -90,7 +90,7 @@ So you should analyse first the situation and then acting one event.
 
 So for example if your drone is currently flying to a point you will receive at each tick an event "MOVING"
 
-## Managing parcels
+# Managing parcels
 
 **droneInfo.parcels** attribut contains parcels that you have already grabbed and that you should deliver.
 
@@ -105,10 +105,14 @@ This one is special it will allow your drone to go faster !
 For this one you don't need to deliver it.
 
 
-# If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
+# Must know
+ *  In order to run test 
+ ``` 
+ ```
+ *  If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
 
 
-# How to optimise your drone
+# Optimisation
 
 ## Turfjs "Advanced geospatial analysis for browsers and Node.js"
 
