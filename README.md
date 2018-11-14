@@ -8,7 +8,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
 
 # Move your drone
 
-## type of command to send for moving your drone :
+ Type of command to send for moving your drone :
 
 ```
 {
@@ -25,7 +25,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
 
 # Event received 
 
-## Example of json that your cloud function will receive:
+Example of json that your cloud function will receive:
 
 ```
 {
@@ -106,15 +106,15 @@ For this one you don't need to deliver it.
 
 
 # Must know
- *  In order to run test 
- ``` 
+ *  In order to run tests 
+ ``` npn test
  ```
  *  If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
 
 
 # Optimisation
 
-## Turfjs "Advanced geospatial analysis for browsers and Node.js"
+Turfjs "Advanced geospatial analysis for browsers and Node.js"
 
 [Calculates the distance between two points](http://turfjs.org/docs#distance)
 
