@@ -20,6 +20,10 @@ exports.onDroneEventHttp = async (req, res) => {
     command = onWaitingForCommandEvent(droneEvent);
   } else if (droneEvent.event === 'MOVING') {
     command = onMovingEvent(droneEvent);
+  } else if (droneEvent.event === 'PARCEL_GRABBED') {
+    command = onParcelGrabbed(droneEvent);
+  } else if (droneEvent.event === 'MOVE_LOCATION_ERROR') {
+    command = onMoveLocationError(droneEvent);
   }
 
   if (command !== null) {
@@ -55,6 +59,16 @@ function onWaitingForCommandEvent(droneEvent) {
 }
 
 function onMovingEvent(droneEvent) {
+  // write your code here
+  return null;
+}
+
+function onParcelGrabbed(droneEvent) {
+  // write your code here
+  return null;
+}
+
+function onMoveLocationError(droneEvent) {
   // write your code here
   return null;
 }

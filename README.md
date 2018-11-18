@@ -1,4 +1,4 @@
-# Register you to the game
+# Register your cloud function to the game engine
 
 Run the following example command with your own values:
 
@@ -8,7 +8,7 @@ curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -
 
 # Move your drone
 
- Type of command to send for moving your drone :
+Type of command to send to move your drone :
 
 ```
 {
@@ -82,11 +82,9 @@ So you should analyse first the situation and then acting one event.
 **event** attribut is the type of event currently received.
 **event** value can be :
 - WAITING_FOR_COMMAND (the drone is waiting for a new command even if its operating)
-- MOVING
-- DESTINATION_REACHED	
-- PARCEL_GRABBED
-- PARCEL_DELIVERED
-- MOVE_LOCATION_ERROR (if the location you sent in command is outside the play ground)
+- MOVING (the drone is currently moving to its move destination set in the command)
+- PARCEL_GRABBED (the drone has just grabbed a parcel, the next event sent just after this one is WAITING_FOR_COMMAND)
+- MOVE_LOCATION_ERROR (if the move location you sent in command is not valid)
 
 So for example if your drone is currently flying to a point you will receive at each tick an event "MOVING"
 
