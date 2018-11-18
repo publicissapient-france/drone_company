@@ -83,7 +83,6 @@ So you should analyse first the situation and then acting one event.
 **event** value can be :
 - WAITING_FOR_COMMAND (the drone is waiting for a new command even if its operating)
 - MOVING (the drone is currently moving to its move destination set in the command)
-- PARCEL_GRABBED (the drone has just grabbed a parcel, the next event sent just after this one is WAITING_FOR_COMMAND)
 - MOVE_LOCATION_ERROR (if the move location you sent in command is not valid)
 
 So for example if your drone is currently flying to a point you will receive at each tick an event "MOVING"

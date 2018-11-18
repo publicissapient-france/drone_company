@@ -1,5 +1,6 @@
 /*eslint-disable semi, no-empty-label, no-undef, no-extra-semi, no-undef-expression, no-unused-params, no-use-before-define*/
 const { publishInTopic } = require('./pubsubUtils');
+const turf = require('@turf/turf');
 
 
 exports.onDroneEventHttp = async (req, res) => {
@@ -20,8 +21,6 @@ exports.onDroneEventHttp = async (req, res) => {
     command = onWaitingForCommandEvent(droneEvent);
   } else if (droneEvent.event === 'MOVING') {
     command = onMovingEvent(droneEvent);
-  } else if (droneEvent.event === 'PARCEL_GRABBED') {
-    command = onParcelGrabbed(droneEvent);
   } else if (droneEvent.event === 'MOVE_LOCATION_ERROR') {
     command = onMoveLocationError(droneEvent);
   }
@@ -63,12 +62,13 @@ function onMovingEvent(droneEvent) {
   return null;
 }
 
-function onParcelGrabbed(droneEvent) {
-  // write your code here
-  return null;
-}
-
 function onMoveLocationError(droneEvent) {
   // write your code here
   return null;
 }
+
+const distance = (locationA, locationB) => {
+  const itemATurfLocation = turf.point([locationA.latitude, locationA.longitude]);
+  const itemBTurfLocation = turf.point([locationB.latitude, locationB.longitude]);
+  return turf.distance(itemATurfLocation, itemBTurfLocation, {});
+};

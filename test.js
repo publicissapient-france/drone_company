@@ -97,35 +97,6 @@ test('receiving WAITING_FOR_COMMAND event', async t => {
 });
 
 
-test('receiving PARCEL_GRABBED event', async t => {
-  let msgSent;
-  const index = proxyquire.load(
-    './index', {
-      './pubsubUtils' : {
-        'publishInTopic': async (message, topicName) => {
-          msgSent = JSON.parse(message);
-          console.log('publishInTopic called')
-          return
-        }
-      }
-    }
-  );
-
-  eventMsg.event = 'PARCEL_GRABBED';
-  const req = {
-    body: {
-      ...eventMsg
-    }
-  };
-  const res = { send: sinon.stub() };
-
-  // when
-  await index.onDroneEventHttp(req, res);
-
-  t.true(res.send.calledOnce);
-});
-
-
 test('receiving MOVING event', async t => {
   let msgSent;
   const index = proxyquire.load(
