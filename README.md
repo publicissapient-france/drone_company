@@ -1,5 +1,3 @@
-# Get a google cloud project
-[team sheet ]( https://docs.google.com/document/d/1gdo2nDwqT_--t3JN30sHsJHXqznNFc9jBeatxPM3NFQ/edit?usp=sharing)
 
 # Register your cloud function to the game engine
 
