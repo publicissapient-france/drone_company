@@ -34,12 +34,12 @@ def onWaitingForCommandEvent(droneEvent):
     todo = {}
     todo = todo["teamId"] = droneEvent['teamId']
     todo["command"] = {'name': 'MOVE', 'location': {}}
-command: {
-    name: 'MOVE',
-    location: {
-        latitude: x,
-        longitude: y
-    },
+    command: {
+        name: 'MOVE',
+        location: {
+            latitude: x,
+            longitude: y
+    }
     return todo
 
 
