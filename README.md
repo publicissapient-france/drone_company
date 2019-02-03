@@ -38,10 +38,28 @@ Example of json that your cloud function will receive:
       "longitude": 2.3426746801338623
     },
     "topicUrl": "https://europe-west1-...",
-    "parcels": [], <-- List of parcels carried by your drone
+    "parcels": [ <-- List of parcels currently carried by your drone
+        {
+            "location": {
+                "delivery": {
+                    "latitude": 48.89913913916235,
+                    "longitude": 2.4160708432981473
+                },
+                "pickup": {
+                    "latitude": 48.90704487288879,
+                    "longitude": 2.281904373627992
+                }
+            },
+            "parcelId": "03fff885-...",
+            "score": 50,
+            "status": "GRABBED",
+            "teamId": "all",
+            "type": "CLASSIC"
+        }
+    ],
     "score": 0
   },
-  "availableParcelsForTeam": [ <-- List of parcels to pickup
+  "availableParcelsForTeam": [ <-- List of parcels available to pickup
     {
       "teamId": "black-543",
       "status": "AVAILABLE",
