@@ -3,6 +3,7 @@ import logging
 
 from pubsubUtils import publish_messages
 
+
 def onDroneEventHttp(request):
     droneEvent = request.get_json()
     logging.info("receiving:{}".format(droneEvent))
@@ -11,9 +12,9 @@ def onDroneEventHttp(request):
         logging.error('bad droneEvent received')
         exit(1)
 
-    response= analyseMessage(droneEvent)
+    response = analyseMessage(droneEvent)
     if response:
-        publish_messages(json.dumps(response), topicName)
+        publish_messages(json.dumps(response))
 
 
 def analyseMessage(message):
