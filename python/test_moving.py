@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from index import onMovingEvent, onWaitingForCommandEvent
+from index import analyseMessage
 
 message = {
     "teamId": "black-543",
@@ -66,13 +66,13 @@ message = {
 
 class TestMoving(TestCase):
 
-    def test_receivingWAITINGFORCOMMAND(self):
+    def test_receiving_waiting_for_command(self):
         # Given
         localMessage = message
         localMessage["event"] = "WAITING_FOR_COMMAND"
 
         # When
-        result = onWaitingForCommandEvent(localMessage)
+        result = analyseMessage(localMessage)
 
         # Then
         self.assertEqual("black-543", result["teamId"])
@@ -80,13 +80,24 @@ class TestMoving(TestCase):
         self.assertEqual(3, result["command"]["location"]["latitude"])
         self.assertEqual(5, result["command"]["location"]["longitude"])
 
-    def test_receivingMOVING(self):
+    def test_receiving_moving(self):
         # Given
         localMessage = message
         localMessage["event"] = "MOVING"
 
         # When
-        result = onMovingEvent(localMessage)
+        result = analyseMessage(localMessage)
+
+        # Then
+        self.assertEqual(None, result)
+
+    def test_receiving_move_location_error(self):
+        # Given
+        localMessage = message
+        localMessage["event"] = "MOVE_LOCATION_ERROR"
+
+        # When
+        result = analyseMessage(localMessage)
 
         # Then
         self.assertEqual(None, result)

@@ -14,21 +14,23 @@ def onDroneEventHttp(request):
         logging.error('bad droneEvent received')
         exit(1)
 
+    response= analyseMessage(droneEvent)
+    if response:
+        publish_messages(json.dumps(response), topicName)
+
+
+def analyseMessage(message):
     command = {}
+    if (message['event'] == 'WAITING_FOR_COMMAND'):
+        command = onWaitingForCommandEvent(message)
 
-    if (droneEvent['event'] == 'WAITING_FOR_COMMAND'):
-        command = onWaitingForCommandEvent(droneEvent)
+    elif (message['event'] == 'MOVING'):
+        command = onMovingEvent(message)
 
-    elif (droneEvent['event'] == 'MOVING'):
-        command = onMovingEvent(droneEvent)
+    elif (message['event'] == 'MOVE_LOCATION_ERROR'):
+        command = onMoveLocationError(message)
 
-    elif (droneEvent['event'] == 'MOVE_LOCATION_ERROR'):
-        command = onMoveLocationError(droneEvent)
-
-    if command:
-        publish_messages(json.dumps(command), topicName)
-
-    return "Ok"
+    return command
 
 
 #
