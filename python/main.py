@@ -3,9 +3,6 @@ import logging
 
 from pubsubUtils import publish_messages
 
-topicName = 'projects/jbc-atl-sal-func-techevent/topics/drone-command'
-
-
 def onDroneEventHttp(request):
     droneEvent = request.get_json()
     logging.info("receiving:{}".format(droneEvent))
