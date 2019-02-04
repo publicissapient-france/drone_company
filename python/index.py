@@ -20,6 +20,7 @@ def onDroneEventHttp(request):
 
 
 def analyseMessage(message):
+    # write your code here
     command = {}
     if (message['event'] == 'WAITING_FOR_COMMAND'):
         command = onWaitingForCommandEvent(message)
@@ -33,8 +34,8 @@ def analyseMessage(message):
     return command
 
 
-#
 def onWaitingForCommandEvent(droneEvent):
+    # write your code here
     response = {"teamId": droneEvent['teamId'],
                 "command": {"name": "MOVE",
                             "location":
