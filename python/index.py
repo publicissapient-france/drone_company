@@ -3,6 +3,8 @@ import logging
 
 from pubsubUtils import publish_messages
 
+topicName = 'projects/jbc-atl-sal-func-techevent/topics/drone-command'
+
 
 def onDroneEventHttp(request):
     droneEvent = request.get_json()
@@ -24,18 +26,22 @@ def onDroneEventHttp(request):
         command = onMoveLocationError(droneEvent)
 
     if command:
-        publish_messages(json.dumps(command))
+        publish_messages(json.dumps(command), topicName)
 
     return "Ok"
 
 
 #
 def onWaitingForCommandEvent(droneEvent):
-    response = {}
-    response.
-    response["teamId"] = droneEvent['teamId'],
-    response["command"] = {},
-    response["command"]["Name"]= "MOVE",
+    response = {"teamId": droneEvent['teamId'],
+                "command": {"name": "MOVE",
+                            "location":
+                                {
+                                    "latitude": 3,
+                                    "longitude": 5
+                                }
+                            },
+                }
     return response
 
 

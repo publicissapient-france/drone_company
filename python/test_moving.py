@@ -61,7 +61,7 @@ message = {
             "score": 0.1
         }
     ]
-};
+}
 
 
 class TestMoving(TestCase):
