@@ -10,7 +10,7 @@ install:
 	
 deploy:
 	# To deploy in App Engine
-	gcloud beta functions deploy onDroneEventHttp --runtime python37 --trigger-http --region=europe-west1
+	gcloud beta functions deploy $name --entry-point onDroneEventHttp --runtime python37 --trigger-http --region=europe-west1
 
 test:
 	#To run all the tests

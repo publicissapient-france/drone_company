@@ -14,7 +14,7 @@ def onDroneEventHttp(request):
         logging.error('bad droneEvent received')
         exit(1)
 
-    response= analyseMessage(droneEvent)
+    response = analyseMessage(droneEvent)
     if response:
         publish_messages(json.dumps(response), topicName)
 
@@ -35,17 +35,22 @@ def analyseMessage(message):
 
 
 def onWaitingForCommandEvent(droneEvent):
-    # write your code here
-    response = {"teamId": droneEvent['teamId'],
+
+    parcels_ = droneEvent["droneInfo"]["parcels"]
+    if len(parcels_) > 0:
+        return {"teamId": droneEvent['teamId'],
                 "command": {"name": "MOVE",
-                            "location":
-                                {
-                                    "latitude": 3,
-                                    "longitude": 5
-                                }
+                            "location": parcels_[0]["location"]["delivery"],
+
                             },
                 }
-    return response
+    else:
+        return {"teamId": droneEvent['teamId'],
+                "command": {"name": "MOVE",
+                            "location": droneEvent["availableParcelsForTeam"][0]["location"]["pickup"],
+
+                            },
+                }
 
 
 def onMovingEvent(droneEvent):
