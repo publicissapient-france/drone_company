@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from index import analyseMessage
+from main import analyseMessage
 
 message = {
     "teamId": "black-543",
