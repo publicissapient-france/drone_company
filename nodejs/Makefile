@@ -2,7 +2,7 @@
 
 register:
 	# To be register in the game
-	curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}'\
+	curl -d '{"teamId":$(teamId), "url":$(url)\
 	 -H "Content-Type: application/json" -X POST https://europe-west1-jbc-atl-sal-func-techevent.cloudfunctions.net/droneCallBackSetter
 
 install:
