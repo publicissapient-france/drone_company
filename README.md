@@ -4,7 +4,15 @@
 Run the following example command with your own values:
 
 ```
-curl -d '{"teamId":"YOUR TEAM ID HERE", "url":"YOUR CLOUD FUNCTION URL HERE"}' -H "Content-Type: application/json" -X POST https://europe-west1-jbc-atl-sal-func-techevent.cloudfunctions.net/droneCallBackSetter
+make register team="YOUR TEAM ID HERE" url="YOUR CLOUD FUNCTION URL HERE"
+```
+
+# Deploy your cloud function 
+
+Run the following command:
+
+```
+make deploy
 ```
 
 # Move your drone
@@ -123,7 +131,7 @@ For this one you don't need to deliver it.
 # Must know
  *  In order to run tests 
  ``` 
- npn test
+make test
  ```
  *  If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
 
