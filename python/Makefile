@@ -14,4 +14,4 @@ deploy:
 
 test:
 	#To run all the tests
-	python -m un
+	python3 -m unittest
