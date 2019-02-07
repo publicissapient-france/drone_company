@@ -6,7 +6,7 @@ register:
 
 install:
 	# To install dependencies
-	pip install -r requirements.txt
+	sudo pip install -r requirements.txt
 	
 deploy:
 	# To deploy in App Engine
