@@ -15,4 +15,4 @@ deploy:
 
 test:
 	#To run all the tests
-	npm run test
+	npm test
