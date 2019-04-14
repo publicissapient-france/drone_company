@@ -34,15 +34,7 @@ def analyseMessage(message):
 
 def onWaitingForCommandEvent(droneEvent):
     # write your code here
-    response = {"teamId": droneEvent['teamId'],
-                "command": {"name": "MOVE",
-                            "location":
-                                {
-                                    "latitude": 3,
-                                    "longitude": 5
-                                }
-                            },
-                }
+    response = {"teamId": droneEvent['teamId']}
     return response
 
 
