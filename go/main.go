@@ -3,7 +3,6 @@ package droneCompany
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -16,8 +15,7 @@ var (
 
 func OnDroneEventHttp(w http.ResponseWriter, r *http.Request) {
 
-	//stdout.Println(r.GetBody())
-	fmt.Println(r.Body)
+	stdout.Println(r.Body)
 	var message Message
 
 	if err := json.NewDecoder(r.Body).Decode(&message); err != nil {
