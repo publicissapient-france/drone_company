@@ -12,7 +12,8 @@ install:
 	
 deploy:
 	# To deploy in cloud function
-	gcloud beta functions deploy onDroneEventHttp --runtime python37 --trigger-http --region=europe-west1
+	gcloud beta functions deploy onDroneEventHttp \
+	--runtime python37 --trigger-http --region=europe-west1
 
 bulk_deploy:
 	# To deploy 20 functions

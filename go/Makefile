@@ -6,16 +6,17 @@ register: required-team required-url
 
 install:
 	# To install dependencies
+	go get
 
 	
 deploy:
 	# To deploy in cloud function
-	gcloud beta functions deploy onDroneEventHttp \
-	--runtime=go111 --trigger-http --region=europe-west1
+	gcloud beta functions deploy OnDroneEventHttp  \
+	 --runtime=go111 --trigger-http --region=europe-west1
 
 test:
 	#To run all the tests
-
+	go test .
 
 required-team:
     # Function to control if the variable team is set
