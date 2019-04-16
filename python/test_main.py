@@ -49,7 +49,7 @@ message = {
             "score": 50
         },
         {
-            "teamId": "black-543",
+            "teamId": "all",
             "status": "AVAILABLE",
             "location": {
                 "pickup": {
@@ -76,9 +76,6 @@ class TestMoving(TestCase):
 
         # Then
         self.assertEqual("black-543", result["teamId"])
-        self.assertEqual("MOVE", result["command"]["name"])
-        self.assertEqual(3, result["command"]["location"]["latitude"])
-        self.assertEqual(5, result["command"]["location"]["longitude"])
 
     def test_receiving_moving(self):
         # Given

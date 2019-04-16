@@ -11,12 +11,12 @@ install:
 	
 deploy:
 	# To deploy in cloud function
-	gcloud beta functions deploy onDroneEventHttp --runtime=nodejs8 --trigger-http --region=europe-west1
+	gcloud beta functions deploy onDroneEventHttp \
+	--runtime=nodejs8 --trigger-http --region=europe-west1
 
 test:
 	#To run all the tests
 	npm test
-
 
 required-team:
     # Function to control if the variable team is set
