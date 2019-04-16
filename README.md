@@ -1,6 +1,6 @@
 
 # Register your cloud function to the game engine
-[Dashboard](https://deploy-techevent-drone.appspot.com/)
+Open the [Dashboard](https://deploy-techevent-drone.appspot.com/)
 Run the following example command with your own values:
 
 ```
@@ -14,7 +14,18 @@ Run the following command:
 ```
 make deploy
 ```
+# GamePlay
 
+There are three things that you need to know.
+   *  First to pick up a parcel just move the drone to the parcel's position
+   *  Secondly carrying to much parcel will slow down your drone. But you can take as parcels as you want.
+   *  third 5 levels exists. Each one will bring in the game some extra features.
+       For example: 
+        *  Some parcels could only be picked up by you but other are share. The are rainbow colors
+        *  Some parcels increase your speed. They have lightning bolt on top. You don't need to delivery this one
+        *  Some parcels give you no point or even worse will take you point.
+    We advice you to go step by step. You should implement pick as a first step.    
+         
 # Move your drone
 
 Type of command to send to move your drone :
@@ -118,7 +129,7 @@ If your drone is not moving and so is waiting for a command you will receive a e
 **droneInfo.parcels** attribut contains parcels that you have already grabbed and that you should deliver.
 
 **availableParcelsForTeam** attribut you will get all the parcels that your drone can get.
-There is currently two type parcel:
+There is currently two type of parcel:
 
 **"type": "CLASSIC"**
 Typical parcel when the drone grab one of those he will have to go to the destination to earn the point.
@@ -127,18 +138,22 @@ Typical parcel when the drone grab one of those he will have to go to the destin
 This one is special it will allow your drone to go faster !
 For this one you don't need to deliver it.
 
+There is currently two type of teamID:
 
+**"teamId": "black-543",**
+Only for you
+
+**"teamId": "all",**
+For all teams.
+
+
+ 
 # Must know
  *  In order to run tests 
  ``` 
 make install test
  ```
  *  If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
-
-
-
-# GamePlay
-    
       
 
 # Optimisation
