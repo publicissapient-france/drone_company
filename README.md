@@ -1,6 +1,6 @@
 
 # Register your cloud function to the game engine
-
+[Dashboard](https://deploy-techevent-drone.appspot.com/)
 Run the following example command with your own values:
 
 ```
@@ -85,7 +85,7 @@ Example of json that your cloud function will receive:
       "score": 50
     },
     {
-      "teamId": "black-543",
+      "teamId": "all",
       "status": "AVAILABLE",
       "location": {
         "pickup": {
@@ -135,6 +135,11 @@ make install test
  ```
  *  If your not sure about js code you can have a nice sandbox at [repl.it](https://repl.it/languages)
 
+
+
+# GamePlay
+    Todo  
+      
 
 # Optimisation
 
