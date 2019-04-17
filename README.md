@@ -11,7 +11,7 @@ Open the [Dashboard](https://deploy-techevent-drone.appspot.com/)
 Run the following example command with your own values:
 
 ```
-make register team="YOUR TEAM ID HERE" url="YOUR CLOUD FUNCTION URL HERE"
+make register team="{{project-name}}" url="YOUR CLOUD FUNCTION URL HERE"
 ```
 
 # GamePlay
