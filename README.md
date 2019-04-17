@@ -1,3 +1,10 @@
+# Deploy your cloud function 
+
+Run the following command:
+
+```
+make deploy
+```
 
 # Register your cloud function to the game engine
 Open the [Dashboard](https://deploy-techevent-drone.appspot.com/)
@@ -7,13 +14,6 @@ Run the following example command with your own values:
 make register team="YOUR TEAM ID HERE" url="YOUR CLOUD FUNCTION URL HERE"
 ```
 
-# Deploy your cloud function 
-
-Run the following command:
-
-```
-make deploy
-```
 # GamePlay
 
 There are three things that you need to know.
