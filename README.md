@@ -19,10 +19,10 @@ make register team="{{project-name}}" url="YOUR CLOUD FUNCTION URL HERE"
 There are three things that you need to know.
    *  First, to pick up a parcel just move the drone to the parcel position
    *  Secondly, carrying to much parcel will slow down your drone. But you can take as parcels as you want.
-   *  Thirdly, 6 levels exists. Each one will bring in the game some extra features.
-   	*  At first, all parcels are juste available for your team, all have points (levels 1 and 2).
-	*  From level 3, some parcels give you no point. A new parcel type (see BOOST type below) that increase your speed become available. They have lightning bolt on top. **You don't need to delivery this one**.
-        *  From level 4, some parcels could only be picked up by you but other are shared, they have rainbow colors.
+   *  Thirdly, 6 levels exists. Each one will bring in the game some extra features.  
+   	*  At first, all parcels are juste available for your team, all have points (levels 1 and 2).  
+	*  From level 3, some parcels give you no point. A new parcel type (see BOOST type below) that increase your speed become available. They have lightning bolt on top. **You don't need to delivery this one**.  
+        *  From level 4, some parcels could only be picked up by you but other are shared, they have rainbow colors.  
     	*  From level 5 it is war! **Some parcels will take you point** and almost all valuable parcels are available for all teams. **Be careful to check parcel availability regularly, an other may have pick it before you!**  
     We advice you to go step by step. You should implement pick as a first step.
          
