@@ -10,6 +10,12 @@ func TestHandler(t *testing.T) {
 		message := newMessage("WAITING_FOR_COMMAND")
 
 		result, _ := analyseMessage(message)
+
+		assert.Equal(t, result.Command.Name, "MOVE")
+		assert.Equal(t, result.Command.Location, Position{
+			Latitude:  48.90524759169551,
+			Longitude: 2.2657060097635626,
+		})
 		assert.Equal(t, "black-543", result.TeamID)
 	})
 
@@ -56,17 +62,33 @@ func newMessage(eventType string) Message {
 					Status: "AVAILABLE",
 					Location: Location{
 						Pickup: Position{
-							Latitude:  48.90524759169551,
-							Longitude: 2.2657060097635626,
+							Latitude:  46.90524759169551,
+							Longitude: 46.2657060097635626,
 						},
 						Delivery: Position{
-							Latitude:  48.867271697034234,
-							Longitude: 2.273857921355812,
+							Latitude:  46.867271697034234,
+							Longitude: 44.273857921355812,
 						},
 					},
 					Type:  "CLASSIC",
 					Score: 50,
 				}},
+		},
+		AvailableParcelsForTeams: []AvailableParcelsForTeam{
+			{TeamID: "black-543",
+				Status: "AVAILABLE",
+				Location: Location{
+					Pickup: Position{
+						Latitude:  48.90524759169551,
+						Longitude: 2.2657060097635626,
+					},
+					Delivery: Position{
+						Latitude:  48.867271697034234,
+						Longitude: 2.273857921355812,
+					},
+				},
+				Type:  "CLASSIC",
+				Score: 50},
 		},
 	}
 	return message
